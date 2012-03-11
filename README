@@ -1,0 +1,17 @@
+To play around with the active record interface for this gradebook schema, we
+must first create the database. In an interactive python terminal (either
+"ipython model.py" or "python -i model.py"), run the following:
+
+>>> db.init_db()
+
+That will initialize the database with the schema in the file 'schema.sql' and
+the data in 'testdata.sql'. Now try out some of these:
+
+>>> Students.all()
+>>> [s.full_name for s in Student.all()]
+>>> Student.get(1).get_grades()
+>>> Assignment.get(1)
+>>> Assignment.where(points=20)
+
+It is a useful exercise to uncomment line 68 of model.py to enable logging and
+see the SQL that the program executes to fulfill these requests.
